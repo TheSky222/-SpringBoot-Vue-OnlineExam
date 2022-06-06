@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface StudentService {
 
-    IPage<Student> findAll(Page<Student> page);
+    IPage<Student> findAll(Page<Student> page, Student student);
 
     Student findById(Integer studentId);
 
