@@ -1,5 +1,6 @@
 package com.exam.serviceimpl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.Teacher;
@@ -16,8 +17,16 @@ public class TeacherServiceImpl implements TeacherService {
     private TeacherMapper teacherMapper;
 
     @Override
-    public IPage<Teacher> findAll(Page<Teacher> page) {
-        return teacherMapper.findAll(page);
+    public IPage<Teacher> findAll(Page<Teacher> page, Teacher teacher) {
+        QueryWrapper<Teacher> teacherQueryWrapper = new QueryWrapper<>();
+        //判断传入teacher 模糊查询字段是否为空
+        if (teacher.getTeacherName() != null && !"".equals(teacher.getTeacherName())) {
+            teacherQueryWrapper.like("teacherName", teacher.getTeacherName());
+        }
+        if (teacher.getTel() != null && !"".equals(teacher.getTel())) {
+            teacherQueryWrapper.like("tel", teacher.getTel());
+        }
+        return teacherMapper.selectPage(page, teacherQueryWrapper);
     }
 
     @Override

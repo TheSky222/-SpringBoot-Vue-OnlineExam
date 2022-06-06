@@ -1,6 +1,20 @@
 // 教师管理页面
 <template>
   <div class="all">
+
+    <el-form :inline="true" :model="formInline" class="demo-form-inline">
+      <el-form-item label="姓名">
+        <el-input v-model="formInline.teacherName" placeholder="姓名"></el-input>
+      </el-form-item>
+      <el-form-item label="联系方式">
+        <el-input v-model="formInline.tel" placeholder="联系方式"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="getTeacherInfo()">查询</el-button>
+      </el-form-item>
+    </el-form>
+
+
     <el-table :data="pagination.records" border>
       <el-table-column fixed="left" prop="teacherName" label="姓名" width="180"></el-table-column>
       <el-table-column prop="institute" label="学院" width="200"></el-table-column>
@@ -75,6 +89,10 @@ export default {
         total: null, //记录条数
         size: 6, //每页条数
       },
+      formInline: {
+          studentName: '',
+          tel: ''
+      },
       dialogVisible: false, //对话框
       form: {}, //保存点击以后当前试卷的信息
     };
@@ -85,7 +103,12 @@ export default {
   methods: {
     getTeacherInfo() {
       //分页查询所有试卷信息
-      this.$axios(`/api/teachers/${this.pagination.current}/${this.pagination.size}`).then(res => {
+      this.$axios({url:`/api/teachers/${this.pagination.current}/${this.pagination.size}`,
+        method: 'post',
+        data: {
+          ...this.formInline
+        },
+      }).then(res => {
         this.pagination = res.data.data;
       }).catch(error => {});
     },

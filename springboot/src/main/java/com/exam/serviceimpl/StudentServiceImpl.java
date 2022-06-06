@@ -1,5 +1,6 @@
 package com.exam.serviceimpl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.Student;
@@ -15,10 +16,17 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentMapper studentMapper;
 
-
     @Override
-    public IPage<Student> findAll(Page<Student> page) {
-        return studentMapper.findAll(page);
+    public IPage<Student> findAll(Page<Student> page,Student student) {
+        QueryWrapper<Student> studentQueryWrapper = new QueryWrapper<>();
+        //判断传入student 模糊查询字段是否为空
+        if(student.getStudentName()!=null&&!"".equals(student.getStudentName())){
+            studentQueryWrapper.like("studentName",student.getStudentName());
+        }
+        if (student.getTel()!=null&&!"".equals(student.getTel())){
+            studentQueryWrapper.like("tel",student.getTel());
+        }
+       return studentMapper.selectPage(page,studentQueryWrapper);
     }
 
     @Override
