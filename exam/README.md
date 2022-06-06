@@ -4,8 +4,9 @@
 
 ### 安装建议
 
-> 建议使用`yarn`来安装项目依赖，首先安装yarn，然后设置yarn源为淘宝镜像
 
+> 建议使用`yarn`来安装项目依赖，首先安装yarn，然后设置yarn源为淘宝镜像
+> nodejs最新版会出bug 建议安装10或者12版本
 ``` bash
 # 安装yarn
 npm install yarn -g
