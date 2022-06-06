@@ -19,11 +19,10 @@ public class TeacherController {
         this.teacherService = teacherService;
     }
 
-    @GetMapping("/teachers/{page}/{size}")
-    public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size){
+    @PostMapping("/teachers/{page}/{size}")
+    public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size, @RequestBody Teacher teacher){
         Page<Teacher> teacherPage = new Page<>(page,size);
-        IPage<Teacher> teacherIPage = teacherService.findAll(teacherPage);
-
+        IPage<Teacher> teacherIPage = teacherService.findAll(teacherPage,teacher);
         return ApiResultHandler.buildApiResult(200,"查询所有教师",teacherIPage);
     }
 

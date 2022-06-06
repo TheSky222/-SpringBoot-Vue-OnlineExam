@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.exam.entity.ApiResult;
 import com.exam.entity.Student;
+import com.exam.mapper.StudentMapper;
 import com.exam.serviceimpl.StudentServiceImpl;
 import com.exam.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,11 @@ public class StudentController {
     @Autowired
     private StudentServiceImpl studentService;
 
-    @GetMapping("/students/{page}/{size}")
-    public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size) {
+
+    @PostMapping("/students/{page}/{size}")
+    public ApiResult findAll(@PathVariable Integer page, @PathVariable Integer size,@RequestBody Student student) {
         Page<Student> studentPage = new Page<>(page,size);
-        IPage<Student> res = studentService.findAll(studentPage);
+        IPage<Student> res = studentService.findAll(studentPage,student);
         return  ApiResultHandler.buildApiResult(200,"分页查询所有学生",res);
     }
 
