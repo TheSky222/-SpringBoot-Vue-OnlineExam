@@ -23,3 +23,7 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### other
+exam/yarn.lock
+.DS_Store
