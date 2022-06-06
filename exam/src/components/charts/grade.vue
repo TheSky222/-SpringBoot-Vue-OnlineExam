@@ -1,4 +1,4 @@
-// 成绩统计页面
+<!-- 成绩统计页面no ok 这个页面废了 -->
 <template>
   <div id="grade">
     <div ref="box" class="box"></div>

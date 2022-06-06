@@ -1,4 +1,4 @@
-//显示学生成绩
+<!-- 显示学生成绩 -->
 <template>
   <div class="table">
     <p class="title">我的分数</p>

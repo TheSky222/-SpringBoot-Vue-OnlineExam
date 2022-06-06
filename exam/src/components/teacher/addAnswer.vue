@@ -1,4 +1,4 @@
-//获取试卷并跳转到添加题库
+<!-- 获取试卷并跳转到添加题库ok -->
 <template>
   <div class="exam">
     <el-table :data="pagination.records" border>

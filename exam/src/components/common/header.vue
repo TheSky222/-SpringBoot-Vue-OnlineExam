@@ -1,4 +1,4 @@
-<!-- 顶部信息栏 -->
+<!-- 顶部信息栏ok -->
 <template>
   <header id="topbar">
     <el-row>
@@ -44,21 +44,24 @@ export default {
   },
   computed: mapState(["flag","menu"]),
   methods: {
-    //显示、隐藏退出按钮
+    //点击头像显示、隐藏退出按钮
     showSetting() {
       this.login_flag = !this.login_flag
     },
-    //左侧栏放大缩小
+    //点击四个小方块的图标显示、隐藏左边栏
     ...mapMutations(["toggle"]),
-    getUserInfo() { //获取用户信息
+    //获取用户信息
+    getUserInfo() { 
       let userName = this.$cookies.get("cname")
       let userId = this.$cookies.get("cid")
       this.user.userName = userName
       this.user.userId = userId
     },
+    // 点击EXAM-SYSTEM图标回到index页面
     index() {
       this.$router.push({path: '/index'})
     },
+    // 退出登录
     exit() {
       let role = this.$cookies.get("role")
       this.$router.push({path:"/"}) //跳转到登录页面

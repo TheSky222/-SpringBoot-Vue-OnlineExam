@@ -1,4 +1,4 @@
-// 展示组件页面
+<!-- 展示组件页面 -->
 <template>
   <div id="index">
     <header1 class="topbar"></header1>
@@ -22,11 +22,11 @@ export default {
   components:{
     header1: header,
     mainLeft: mainLeft,
-    navigator:navigator
+    navigator: navigator
   },
   data() {
     return {
-      username: '许如梦'
+      username: '陆浩天'
     }
   },
   methods: {

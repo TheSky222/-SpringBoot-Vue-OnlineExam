@@ -1,4 +1,4 @@
-<!--管理中心-->
+<!-- 管理中心 修改密码 -->
 <template>
   <div id='manager'>
     <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">

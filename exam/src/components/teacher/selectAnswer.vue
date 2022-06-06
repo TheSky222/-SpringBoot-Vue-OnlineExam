@@ -1,4 +1,4 @@
-//查询所有题库
+<!-- 查询所有题库ok -->
 <template>
   <div class="exam">
     <el-table :data="pagination.records" border :row-class-name="tableRowClassName">

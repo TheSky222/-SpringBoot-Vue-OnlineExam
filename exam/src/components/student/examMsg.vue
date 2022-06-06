@@ -1,4 +1,4 @@
-// 点击试卷后的缩略信息
+<!-- 点击试卷后的缩略信息 -->
 <template>
   <div id="msg">
     <div class="title">

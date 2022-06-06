@@ -1,16 +1,20 @@
-<!-- 用户登录界面 -->
+<!-- 用户登录界面ok -->
 <template>
   <div id="login">
     <div class="bg"></div>
     <el-row class="main-container">
-      <el-col :lg="8" :xs="16" :md="10" :span="10">
+      <el-col :span="10">
         <div class="top">
-          <i class="iconfont icon-kaoshi"></i><span class="title">在线考试系统</span>
+          <!-- <i class="iconfont icon-kaoshi"></i> -->
+          <span class="title">在线考试系统</span>
         </div>
         <div class="bottom">
           <div class="container">
             <p class="title">账号登录</p>
-            <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+            <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">  
+            <!-- 通过 label-position 属性来改变表单域或标签的位置，可选的值有 top/left/right ，默认的是 right ，
+            lable-position 必须要和 label-width（表单域标签的宽度，作为 Form 直接子元素的 form-item 会继承该值） 共同使用，才会生效。 
+            model 属性是用来指定表单使用的数据的-->
               <el-form-item label="用户名">
                 <el-input v-model.number="formLabelAlign.username" placeholder="请输入用户名"></el-input>
               </el-form-item>
@@ -33,9 +37,9 @@
       </el-col>
     </el-row>
     <el-row class="footer">
-      <el-col>
-        <p class="msg2">版权所有 ©2019 <!--重庆文理学院计科2班余晓江--> 保留所有权利  <a href="http://beian.miit.gov.cn/" target="_blank">渝ICP备19001371号</a></p>
-      </el-col>
+      <!-- <el-col>
+        <p class="msg2">版权所有 ©2019 保留所有权利  <a href="http://beian.miit.gov.cn/" target="_blank">渝ICP备19001371号</a></p>
+      </el-col> -->
     </el-row>
     <section class="remind">
       <span>管理员账号：9527</span>
@@ -47,7 +51,7 @@
 
 <script>
 import store from '@/vuex/store'
-import {mapState} from 'vuex'
+import {mapState} from 'vuex' // mapState是state的辅助函数 当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性，让你少按几次键
 export default {
   store,
   name: "login",

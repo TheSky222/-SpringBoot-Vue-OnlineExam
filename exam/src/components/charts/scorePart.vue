@@ -1,3 +1,4 @@
+<!-- 成绩分段图表 -->
 <template>
   <div class="part" >
     <div class="box" ref="box"></div>

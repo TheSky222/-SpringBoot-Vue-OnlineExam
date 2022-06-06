@@ -1,3 +1,4 @@
+<!-- index教师/管理员页面中 欢迎部分ok -->
 <template>
   <section class="index">
     <div class="hello">
@@ -6,9 +7,9 @@
     <div class="msg">
       <p class="title">教务公告：</p>
       <ul>
-        <li @click="openMsg()"><i class="iconfont icon-flag"></i>清明节放假通知</li>
-        <li @click="openMsg()"><i class="iconfont icon-flag"></i>下周例行工作报告会</li>
-        <li @click="openMsg()"><i class="iconfont icon-flag"></i>关于毕业生答辩具体流程</li>
+        <li @click="openMsg1()"><i class="iconfont icon-flag"></i>清明节放假通知</li>
+        <li @click="openMsg2()"><i class="iconfont icon-flag"></i>劳动节放假通知</li>
+        <li @click="openMsg3()"><i class="iconfont icon-flag"></i>端午节放假通知</li>
       </ul>
     </div>
   </section>
@@ -34,8 +35,18 @@ export default {
       this.user.userName = userName
       this.user.userId = userId
     },
-    openMsg() {
-      this.$alert('根据《国务院办公厅关于2019年部分节假日安排的通知》精神，越城区行政服务中心将于4月5日（星期五）至4月7日（星期天）进行清明节放假调休，共3天，放假期间不受理业务。4月8日（星期一）开始正常上班受理业务。望市民朋友相互转告，给您带来不便，敬请谅解。','清明节放假通知',{
+    openMsg1() {
+      this.$alert('根据《国务院办公厅关于2022年部分节假日安排的通知》（国办发明电〔2021〕11号），结合我校具体情况，现将学校关于清明节的放假安排通知如下：4月3日至5日放假调休，共3天。4月2日（星期六）上班。','清明节放假通知',{
+        confirmButtonText: '确定'
+      })
+    },
+    openMsg2() {
+      this.$alert('根据《国务院办公厅关于2022年部分节假日安排的通知》（国办发明电〔2021〕11号），结合我校具体情况，现将学校关于劳动节的放假安排通知如下：4月30日至5月4日放假调休，共5天。4月24日（星期日）、5月7日（星期六）上班。','劳动节放假通知',{
+        confirmButtonText: '确定'
+      })
+    },
+    openMsg3() {
+      this.$alert('根据《国务院办公厅关于2022年部分节假日安排的通知》（国办发明电〔2021〕11号），结合我校具体情况，现将学校关于端午节的放假安排通知如下：6月3日至5日放假，共3天。','端午节放假通知',{
         confirmButtonText: '确定'
       })
     }

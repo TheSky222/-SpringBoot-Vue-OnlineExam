@@ -1,4 +1,4 @@
-// 所有学生
+<!-- 所有学生成绩no ok 不知道为啥成绩没显示 -->
 <template>
   <div class="all">
     <el-table :data="pagination.records" border>

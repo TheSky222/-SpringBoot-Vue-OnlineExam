@@ -1,4 +1,4 @@
-//查询所有考试跳转到分段页面
+<!-- 查询所有考试跳转到分段页面ok -->
 <template>
   <div class="exam">
     <el-table :data="pagination.records" border>

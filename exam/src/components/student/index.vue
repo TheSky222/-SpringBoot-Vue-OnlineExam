@@ -1,4 +1,4 @@
-<!--学生考试首页-->
+<!-- 学生考试首页 -->
 <template>
   <div id="student">
     <el-row class="padding-50">

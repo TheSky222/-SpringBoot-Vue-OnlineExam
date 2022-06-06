@@ -1,4 +1,4 @@
-<!-- 考试管理功能介绍 -->
+<!-- 考试管理功能介绍ok -->
 <template>
   <section class="description">
     <p class="title">考试管理功能介绍</p>

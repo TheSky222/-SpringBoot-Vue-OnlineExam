@@ -1,4 +1,4 @@
-//查询所有考试
+<!-- 查询所有考试ok -->
 <template>
   <div class="exam">
     <el-table :data="pagination.records" border>

@@ -1,4 +1,4 @@
-// 我的试卷页面
+<!-- 我的试卷页面 -->
 <template>
   <div id="myExam">
     <div class="title">我的试卷</div>

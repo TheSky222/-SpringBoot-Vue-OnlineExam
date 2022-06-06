@@ -1,3 +1,4 @@
+<!-- 内部导航栏ok -->
 <template>
   <div id="nav">
     <el-breadcrumb separator-class="el-icon-arrow-right">
