@@ -18,7 +18,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public IPage<Teacher> findAll(Page<Teacher> page, Teacher teacher) {
-        QueryWrapper<Teacher> teacherQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<Teacher> teacherQueryWrapper = new QueryWrapper<>();//查询包装类
         //判断传入teacher 模糊查询字段是否为空
         if (teacher.getTeacherName() != null && !"".equals(teacher.getTeacherName())) {
             teacherQueryWrapper.like("teacherName", teacher.getTeacherName());
@@ -26,7 +26,7 @@ public class TeacherServiceImpl implements TeacherService {
         if (teacher.getTel() != null && !"".equals(teacher.getTel())) {
             teacherQueryWrapper.like("tel", teacher.getTel());
         }
-        return teacherMapper.selectPage(page, teacherQueryWrapper);
+        return teacherMapper.selectPage(page, teacherQueryWrapper);//分页查找
     }
 
     @Override
