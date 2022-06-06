@@ -10,6 +10,7 @@ import com.exam.vo.AnswerVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+// 教师增删改查
 @RestController
 public class TeacherController {
 

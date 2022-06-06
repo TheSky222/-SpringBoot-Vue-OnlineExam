@@ -8,7 +8,8 @@ import com.exam.serviceimpl.ExamManageServiceImpl;
 import com.exam.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+//controller接口层
+// 考试增删改查
 @RestController
 public class ExamManageController {
 
@@ -16,6 +17,7 @@ public class ExamManageController {
     private ExamManageServiceImpl examManageService;
 
     @GetMapping("/exams")
+//    @PostMapping("/exams")
     public ApiResult findAll(){
         System.out.println("不分页查询所有试卷");
         ApiResult apiResult;
@@ -62,7 +64,7 @@ public class ExamManageController {
     @PostMapping("/exam")
     public ApiResult add(@RequestBody ExamManage exammanage){
         int res = examManageService.add(exammanage);
-        if (res ==1) {
+        if (res == 1) {
             return ApiResultHandler.buildApiResult(200, "添加成功", res);
         } else {
             return  ApiResultHandler.buildApiResult(400,"添加失败",res);

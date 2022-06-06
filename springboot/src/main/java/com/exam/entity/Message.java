@@ -15,7 +15,7 @@ public class Message {
 
     private String content;
 
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone="GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone="GMT+8") // 时间格式化注解 pattern 时间格式 timezone 时区
     private Date time;
 
     List<Replay> replays;   //一对多关系，评论信息

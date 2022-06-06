@@ -6,21 +6,21 @@ import lombok.Data;
 public class Teacher {
     private Integer teacherId;
 
-    private String teacherName;
+    private String teacherName; // 姓名
 
-    private String institute;
+    private String institute; // 学院
 
-    private String sex;
+    private String sex; //性别
 
-    private String tel;
+    private String tel; // 电话号码
 
-    private String email;
+    private String email; // 邮箱
 
-    private String pwd;
+    private String pwd; // 密码
 
-    private String cardId;
+    private String cardId; // 身份证号
 
-    private String type;
+    private String type; // 职称
 
     private String role;
 }

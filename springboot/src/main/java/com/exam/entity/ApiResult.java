@@ -16,7 +16,7 @@ public class ApiResult<T> {
     /**
      * 返回的结果包装在value中，value可以是单个对象
      */
-    private T data;
+    private T data; // T 范型
 
     public ApiResult() {
     }

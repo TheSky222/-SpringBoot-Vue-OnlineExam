@@ -7,7 +7,7 @@ public class Student {
 
     private String grade;
 
-    private String major;
+    private String major; // 专业
 
     private String clazz;
 

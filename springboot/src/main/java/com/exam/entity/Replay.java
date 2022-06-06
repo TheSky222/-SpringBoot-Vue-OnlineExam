@@ -14,6 +14,6 @@ public class Replay {
 
     private String replay;
 
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone="GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone="GMT+8") // 时间格式化注解 pattern 时间格式 timezone 时区
     private Date replayTime;
 }

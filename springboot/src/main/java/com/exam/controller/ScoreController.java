@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// 成绩增查
 @RestController
 public class ScoreController {
     @Autowired

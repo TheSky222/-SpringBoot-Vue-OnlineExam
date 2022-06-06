@@ -10,6 +10,7 @@ import com.exam.util.ApiResultHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+// 学生增删改查
 @RestController
 public class StudentController {
 

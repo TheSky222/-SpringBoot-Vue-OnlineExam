@@ -24,7 +24,7 @@ public class ExamManage {
 
     private String major;
 
-    private String institute;
+    private String institute; // 分院
 
     private Integer totalScore;
 

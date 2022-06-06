@@ -21,7 +21,7 @@ public interface AdminMapper {
             "tel = #{tel}, email = #{email},pwd = #{pwd},cardId = #{cardId},role = #{role} where adminId = #{adminId}")
     public int update(Admin admin);
 
-    @Options(useGeneratedKeys = true,keyProperty = "adminId")
+    @Options(useGeneratedKeys = true,keyProperty = "adminId")  // useGeneratedKeys =true 这个表示插入数据之后返回一个自增的主键id给你对应实体类中的主键属性。 keyproperty=主键，这样就可以解决在主键自增的情况下获取主键。
     @Insert("insert into admin(adminName,sex,tel,email,pwd,cardId,role) " +
             "values(#{adminName},#{sex},#{tel},#{email},#{pwd},#{cardId},#{role})")
     public int add(Admin admin);

@@ -1,5 +1,5 @@
 package com.exam.entity;
-
+//model 数据库表字段定义
 public class Admin {
     private Integer adminId;
 
